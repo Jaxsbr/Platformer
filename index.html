@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Platformer 3</title>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+            background: black;
+            overflow:hidden;
+        }
+        canvas {
+            /*border:1px solid #000;*/
+            background: white;       
+            position:absolute;
+            left:50%;
+            top:50%;     
+        }
+        .menu {
+            background-color: #463279;
+            border: 2px solid #ff6a00;
+            border-radius: 12px;            
+            height: 240px;            
+            position: absolute;
+            left: 50%;
+            margin-left: -200px;
+            margin-top: -120px;
+            text-align:center;
+            top: 50%;
+            width: 400px;
+            z-index: 1;
+        }
+        .title {
+            color: #ff6a00;
+            display: inline;
+            font-family: Impact;
+            font-size: 38px;            
+            text-shadow: 0px 0px 10px black;
+        }
+        .itemText {
+            color: #ffd800;
+            display: inline;
+            font-family: Consolas;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px black;
+        }
+        .itemTextSelected {
+            color: #fff3b2;                
+            display: inline;
+            font-family: Consolas;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px red;
+        }
+        .itemTextDisabled {
+            color: #715f9c;                
+            display: inline;
+            font-family: Consolas;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>var $ = {};</script>
+    <script src="js/utils.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/particleEngine.js"></script>
+    <script src="js/checkPoint.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/ball.js"></script>
+    <script src="js/blade.js"></script>
+    <script src="js/tile.js"></script>
+    <script src="js/platform.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/level.js"></script>
+    <script src="js/gameMenu.js"></script>
+    <script src="js/gameLoad.js"></script>
+    <script src="js/gamePlay.js"></script>
+    <script src="js/gameData.js"></script>
+    <script src="js/game.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            $.Init();
+        });
+    </script>
+
+    <div id="Menu" class="menu">    
+        <br />    
+        <p class="title">Platformer 3</p>
+        <br /><br />
+        <p id="NewGameText" class="itemText" onclick="$.NewGame();">New Game</p>
+        <br />
+        <p id="SavedGameText" class="itemTextDisabled" onclick="$.SavedGame();">Saved Game</p>
+        <br />
+        <p id="OptionsText" class="itemText" onclick="$.Options();">Options</p>
+        <br />
+        <p id="MainWebsiteText" class="itemText" onclick="window.location = '';">Main Website</p>
+    </div>
+</body>
+</html>
+
